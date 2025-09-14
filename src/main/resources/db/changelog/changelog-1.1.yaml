@@ -1,0 +1,214 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: bao
+      changes:
+        # Friend 1
+        - insert:
+            tableName: friend_contact
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: fb_url, value: "alice.fb" }
+              - column: { name: ins_url, value: "alice.ins" }
+              - column: { name: phone_num, value: "0901111111" }
+              - column: { name: email, value: "alice@example.com" }
+
+        - insert:
+            tableName: friend_info
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: full_name, value: "Alice Nguyen" }
+              - column: { name: nick_name, value: "Ali" }
+              - column: { name: birth_day, valueDate: "2000-01-01" }
+              - column: { name: address, value: "Hanoi" }
+              - column: { name: hobby, value: "Reading" }
+              - column: { name: elementary_school, value: "Nguyen Du" }
+              - column: { name: middle_school, value: "Ngo Si Lien" }
+              - column: { name: high_school, value: "Amsterdam" }
+              - column: { name: university, value: "HUST" }
+
+        - insert:
+            tableName: friend_parent
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: father_name, value: "Nguyen Van A" }
+              - column: { name: mother_name, value: "Tran Thi B" }
+
+        - insert:
+            tableName: friend
+            columns:
+              - column: { name: id, value: 1 }
+              - column: { name: contact_id, value: 1 }
+              - column: { name: info_id, value: 1 }
+              - column: { name: parent_id, value: 1 }
+
+        # Friend 2
+        - insert:
+            tableName: friend_contact
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: fb_url, value: "bao.fb" }
+              - column: { name: ins_url, value: "bao.ins" }
+              - column: { name: phone_num, value: "0902222222" }
+              - column: { name: email, value: "bao@example.com" }
+
+        - insert:
+            tableName: friend_info
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: full_name, value: "Bao Tran" }
+              - column: { name: nick_name, value: "B" }
+              - column: { name: birth_day, valueDate: "1999-05-10" }
+              - column: { name: address, value: "Saigon" }
+              - column: { name: hobby, value: "Football" }
+              - column: { name: elementary_school, value: "Ly Thuong Kiet" }
+              - column: { name: middle_school, value: "Tran Phu" }
+              - column: { name: high_school, value: "Le Hong Phong" }
+              - column: { name: university, value: "UIT" }
+
+        - insert:
+            tableName: friend_parent
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: father_name, value: "Tran Van C" }
+              - column: { name: mother_name, value: "Le Thi D" }
+
+        - insert:
+            tableName: friend
+            columns:
+              - column: { name: id, value: 2 }
+              - column: { name: contact_id, value: 2 }
+              - column: { name: info_id, value: 2 }
+              - column: { name: parent_id, value: 2 }
+
+        # Friend 3
+        - insert:
+            tableName: friend_contact
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: fb_url, value: "charlie.fb" }
+              - column: { name: ins_url, value: "charlie.ins" }
+              - column: { name: phone_num, value: "0903333333" }
+              - column: { name: email, value: "charlie@example.com" }
+
+        - insert:
+            tableName: friend_info
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: full_name, value: "Charlie Pham" }
+              - column: { name: nick_name, value: "Chaz" }
+              - column: { name: birth_day, valueDate: "2001-07-15" }
+              - column: { name: address, value: "Danang" }
+              - column: { name: hobby, value: "Gaming" }
+              - column: { name: elementary_school, value: "Hoa Mai" }
+              - column: { name: middle_school, value: "Hoa Phu" }
+              - column: { name: high_school, value: "Phan Chau Trinh" }
+              - column: { name: university, value: "DUT" }
+
+        - insert:
+            tableName: friend_parent
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: father_name, value: "Pham Van E" }
+              - column: { name: mother_name, value: "Do Thi F" }
+
+        - insert:
+            tableName: friend
+            columns:
+              - column: { name: id, value: 3 }
+              - column: { name: contact_id, value: 3 }
+              - column: { name: info_id, value: 3 }
+              - column: { name: parent_id, value: 3 }
+
+        # Friend 4
+        - insert:
+            tableName: friend_contact
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: fb_url, value: "david.fb" }
+              - column: { name: ins_url, value: "david.ins" }
+              - column: { name: phone_num, value: "0904444444" }
+              - column: { name: email, value: "david@example.com" }
+
+        - insert:
+            tableName: friend_info
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: full_name, value: "David Le" }
+              - column: { name: nick_name, value: "Dave" }
+              - column: { name: birth_day, valueDate: "1998-12-30" }
+              - column: { name: address, value: "Hue" }
+              - column: { name: hobby, value: "Swimming" }
+              - column: { name: elementary_school, value: "Hue 1" }
+              - column: { name: middle_school, value: "Hue 2" }
+              - column: { name: high_school, value: "Quoc Hoc" }
+              - column: { name: university, value: "Hue University" }
+
+        - insert:
+            tableName: friend_parent
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: father_name, value: "Le Van G" }
+              - column: { name: mother_name, value: "Nguyen Thi H" }
+
+        - insert:
+            tableName: friend
+            columns:
+              - column: { name: id, value: 4 }
+              - column: { name: contact_id, value: 4 }
+              - column: { name: info_id, value: 4 }
+              - column: { name: parent_id, value: 4 }
+
+        # Friend 5
+        - insert:
+            tableName: friend_contact
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: fb_url, value: "emma.fb" }
+              - column: { name: ins_url, value: "emma.ins" }
+              - column: { name: phone_num, value: "0905555555" }
+              - column: { name: email, value: "emma@example.com" }
+
+        - insert:
+            tableName: friend_info
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: full_name, value: "Emma Vo" }
+              - column: { name: nick_name, value: "Em" }
+              - column: { name: birth_day, valueDate: "2002-03-20" }
+              - column: { name: address, value: "Can Tho" }
+              - column: { name: hobby, value: "Cooking" }
+              - column: { name: elementary_school, value: "Can Tho 1" }
+              - column: { name: middle_school, value: "Can Tho 2" }
+              - column: { name: high_school, value: "Can Tho High" }
+              - column: { name: university, value: "CTU" }
+
+        - insert:
+            tableName: friend_parent
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: father_name, value: "Vo Van I" }
+              - column: { name: mother_name, value: "Tran Thi J" }
+
+        - insert:
+            tableName: friend
+            columns:
+              - column: { name: id, value: 5 }
+              - column: { name: contact_id, value: 5 }
+              - column: { name: info_id, value: 5 }
+              - column: { name: parent_id, value: 5 }
+
+
+      rollback:
+        - delete:
+            tableName: friend
+            where: id in (1, 2, 3, 4, 5)
+        - delete:
+            tableName: friend_contact
+            where: id in (1, 2, 3, 4, 5)
+        - delete:
+            tableName: friend_info
+            where: id in (1, 2, 3, 4, 5)
+        - delete:
+            tableName: friend_parent
+            where: id in (1, 2, 3, 4, 5)

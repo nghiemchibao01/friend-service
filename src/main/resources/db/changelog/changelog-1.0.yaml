@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: bao
+      changes:
+        - createTable:
+            tableName: friend_contact
+            columns:
+              - column: { name: id, type: BIGINT AUTO_INCREMENT, constraints: { primaryKey: true, nullable: false } }
+              - column: { name: fb_url, type: VARCHAR(255) }
+              - column: { name: ins_url, type: VARCHAR(255) }
+              - column: { name: phone_num, type: VARCHAR(50) }
+              - column: { name: email, type: VARCHAR(255) }
+
+        - createTable:
+            tableName: friend_info
+            columns:
+              - column: { name: id, type: BIGINT AUTO_INCREMENT, constraints: { primaryKey: true, nullable: false } }
+              - column: { name: full_name, type: VARCHAR(255) }
+              - column: { name: nick_name, type: VARCHAR(255) }
+              - column: { name: birth_day, type: DATE }
+              - column: { name: address, type: VARCHAR(255) }
+              - column: { name: hobby, type: VARCHAR(255) }
+              - column: { name: elementary_school, type: VARCHAR(255) }
+              - column: { name: middle_school, type: VARCHAR(255) }
+              - column: { name: high_school, type: VARCHAR(255) }
+              - column: { name: university, type: VARCHAR(255) }
+
+        - createTable:
+            tableName: friend_parent
+            columns:
+              - column: { name: id, type: BIGINT AUTO_INCREMENT, constraints: { primaryKey: true, nullable: false } }
+              - column: { name: father_name, type: VARCHAR(255) }
+              - column: { name: mother_name, type: VARCHAR(255) }
+
+        - createTable:
+            tableName: friend
+            columns:
+              - column: { name: id, type: BIGINT AUTO_INCREMENT, constraints: { primaryKey: true, nullable: false } }
+              - column: { name: contact_id, type: BIGINT }
+              - column: { name: info_id, type: BIGINT }
+              - column: { name: parent_id, type: BIGINT }
+
+        - addForeignKeyConstraint:
+            baseTableName: friend
+            baseColumnNames: contact_id
+            referencedTableName: friend_contact
+            referencedColumnNames: id
+            constraintName: fk_friend_contact
+
+        - addForeignKeyConstraint:
+            baseTableName: friend
+            baseColumnNames: info_id
+            referencedTableName: friend_info
+            referencedColumnNames: id
+            constraintName: fk_friend_info
+
+        - addForeignKeyConstraint:
+            baseTableName: friend
+            baseColumnNames: parent_id
+            referencedTableName: friend_parent
+            referencedColumnNames: id
+            constraintName: fk_friend_parent
